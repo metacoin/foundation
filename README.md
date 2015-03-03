@@ -4,7 +4,7 @@ This library provides a simple interface to communicate with a local florincoin 
 
 ### example
 
-An example can be found here: [example/main.go]
+An example can be found here: [examples/main.go]
 
 Here's a sample from that code
 
@@ -32,5 +32,5 @@ Remember, by exposing an RPC interface you're opening up an attack vector. Disab
 
 [MIT]
 
-[example/main.go]:example/main.go
+[examples/main.go]:examples/main.go
 [MIT]:LICENSE.md
