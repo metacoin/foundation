@@ -43,6 +43,10 @@ func RPCCall(command string, args ...interface{}) (interface{}, error) {
 		cmd, err = flojson.NewVerifyMessageCmd(id, args[0].(string), args[1].(string), args[2].(string))
 	case "validateaddress":
 		cmd, err = flojson.NewValidateAddressCmd(id, args[0].(string))
+	case "listtransactions":
+		cmd, err = flojson.NewListTransactionsCmd(id)
+	case "getbalance":
+		cmd, err = flojson.NewGetBalanceCmd(id)
 	default:
 		err = errors.New("command " + command + " not found")
 	}
