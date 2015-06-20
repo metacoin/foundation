@@ -27,6 +27,8 @@ func RPCCall(command string, args ...interface{}) (interface{}, error) {
 		cmd, err = flojson.NewGetRawTransactionCmd(id, args[0].(string))
 	case "decoderawtransaction":
 		cmd, err = flojson.NewDecodeRawTransactionCmd(id, args[0].(string))
+	case "getnewaddress":
+		cmd, err = flojson.NewGetNewAddressCmd(id)
 	case "getconnectioncount":
 		cmd, err = flojson.NewGetConnectionCountCmd(id)
 	case "getnetworkhashps":
