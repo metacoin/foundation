@@ -83,8 +83,13 @@ func SendCommand(cmd flojson.Cmd) (interface{}, error) {
 		return ret, errors.New("F_USER environment variable not set")
 	}
 
+	furi := os.Getenv("F_URI")
+	if ftoken == "" {
+		return ret, errors.New("F_URI environment variable not set")
+	}
+
 	// send command to RPC, get a response in reply
-	reply, err := flojson.RpcSend(fuser, ftoken, "127.0.0.1:18322", cmd)
+	reply, err := flojson.RpcSend(fuser, ftoken, furi, cmd)
 	if err != nil {
 		return ret, err
 	}
