@@ -20,6 +20,7 @@ This is the output (remember to export your RPC username and password):
 ```
 $ export F_TOKEN=verystrongrpcpassword
 $ export F_USER=florpcuser
+$ export F_URI=http://127.0.0.1:18322
 $ go run main.go
 Florincoin network hashrate: 874124892
 $
