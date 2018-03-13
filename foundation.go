@@ -100,7 +100,6 @@ func SendCommand(cmd flojson.Cmd) (interface{}, error) {
 	if reply.Result != nil {
 		return reply.Result, nil
 	} else {
-		// if for some reason the result is nil, but err isn't nil, return a generic warning message
-		return ret, errors.New("didn't get a response from the RPC - check auth and permission settings")
+		return ret, reply.Error
 	}
 }
